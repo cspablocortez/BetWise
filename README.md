@@ -22,7 +22,8 @@ account.
 
 2. Create a new index.html file
 
-3. Add boilerplate code using the `html:5`
+3. Add boilerplate code using the `html:5` command
 
 4. Start a local live server 
 
+5. Send link in chat with repository and boilerplate HTML.
