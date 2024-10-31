@@ -15,7 +15,9 @@ With this application, you can:
 
 ---
 
-## Development Progress
+## Development 
+
+### Completed
 
 1. Create a new Github repository called "BetWise" in your 
 account.
@@ -27,3 +29,9 @@ account.
 4. Start a local live server 
 
 5. Send link in chat with repository and boilerplate HTML.
+
+6. Add header with navigation links
+
+### In Progress
+
+1. Create budget input element
