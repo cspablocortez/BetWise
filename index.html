@@ -18,15 +18,15 @@
         <p>A web app for managing your gambling budget.</p>
     </header>
     <main>
-        <p>Balance: <span><strong>$1,323.50</strong></span></p> 
+        <p>Balance: <strong>$<span id="balance">1,323.50</span></strong></p> 
 
         <label for="">Money Spent</label>
-        $ <input type="number">
-        <button>Add</button>
+        $ <input type="number" id="expense">
+        <button id="add-btn">Add</button>
 
-        <p><em>On Enter, new item is added to unordered list of expenditures.</em></p>
+        <p>Expenses</p>
 
-        <ul>
+        <ul id="expenses-list">
             <li style="color: red;">-$312</li>
         </ul>
     </main>
