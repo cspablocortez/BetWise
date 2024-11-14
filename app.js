@@ -1,28 +1,39 @@
 const balance = document.getElementById("balance");
-const expense = document.getElementById("expense");
+const amountInput = document.getElementById("amount");
+const amountType = document.getElementById("type");
 const addBtn = document.getElementById("add-btn");
 const expensesList = document.getElementById("expenses-list");
 
 class Account {
     constructor() {
-        this.balance = 1323.50;
+        this.balance = 2500.00.toFixed(2);
         balance.textContent = this.balance;
     }
-
-    addExpense() {
-        let loss = parseFloat(expense.value);
-        this.balance -= loss;
-
-        let expenseItem = document.createElement("li");
-        expenseItem.textContent = "-$" + loss;
-        expensesList.appendChild(expenseItem);
-
-        balance.textContent = this.balance;
-        expense.value = "";
-    }
+		
+		updateBalance() {
+			let amount = parseFloat(amountInput.value);
+			let type = amountType.value;
+			let item = document.createElement("li");
+			let prefix = "";
+			
+			if (type == "loss") {
+				this.balance -= amount;;
+				item.style.color = "red";
+				prefix = "-$"
+			} else {
+				this.balance += amount;
+				item.style.color = "green";
+				prefix = "+$"
+			}
+			
+			item.textContent = prefix + amount.toFixed(2);
+			expensesList.appendChild(item);
+			balance.textContent = this.balance.toFixed(2);
+			amountInput.value = "";
+		}
 }
 
 const account = new Account();
-addBtn.addEventListener('click', account.addExpense.bind(account));
+addBtn.addEventListener("click", account.updateBalance.bind(account));
 
 
