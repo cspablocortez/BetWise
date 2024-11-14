@@ -17,13 +17,13 @@ class Account {
 			let prefix = "";
 			
 			if (type == "loss") {
-				this.balance -= amount;;
+				this.balance -= amount;
 				item.style.color = "red";
-				prefix = "-$"
+				prefix = "-$";
 			} else {
 				this.balance += amount;
 				item.style.color = "green";
-				prefix = "+$"
+				prefix = "+$";
 			}
 			
 			item.textContent = prefix + amount.toFixed(2);
