@@ -16,4 +16,4 @@ budget.
 ## Devlog
 
 (11/20/24 - 16:37) We refactored the states data selection method by creating a 
-JSON file to improve searchability. This is to help practice AJAX requests.
+JSON file to improve searchability.
