@@ -3,6 +3,18 @@ const amountInput = document.getElementById("amount");
 const amountType = document.getElementById("type");
 const addBtn = document.getElementById("add-btn");
 const expensesList = document.getElementById("expenses-list");
+const states = document.getElementById("states");
+
+function generateDrop() {
+  for (let i = 0; i < statesIncome.length; i++) {
+    let opt = document.createElement("option");
+    opt.value = statesIncome[i].state;
+    opt.textContent = statesIncome[i].state;
+    states.appendChild(opt);
+  }
+}
+
+generateDrop();
 
 class Account {
     constructor() {
