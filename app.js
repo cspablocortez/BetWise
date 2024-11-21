@@ -5,16 +5,20 @@ const addBtn = document.getElementById("add-btn");
 const expensesList = document.getElementById("expenses-list");
 const statesDropdown = document.getElementById("states");
 
-function generateDropdownItems() {
-  for (let i = 0; i < statesIncomeData.length; i++) {
-    let opt = document.createElement("option");
-    opt.value = statesIncomeData[i].state;
-    opt.textContent = statesIncomeData[i].state;
-    states.appendChild(opt);
-  }
+function generateDropdown() {
+  fetch("./states.json")
+    .then(response => response.json())
+    .then(data => {
+      data.forEach(stateData => {
+        const opt = document.createElement("option");
+        opt.value = stateData.state;
+        opt.textContent = stateData.state;
+        statesDropdown.append(opt);
+      });
+    });
 }
 
-generateDropdownItems();
+generateDropdown();
 
 class Account {
   constructor() {
@@ -51,7 +55,10 @@ class Account {
 }
 
 const account = new Account();
-addBtn.addEventListener("click", account.updateBalance.bind(account));
+
+addBtn.addEventListener("click", () => {
+  account.updateBalance();
+});
 
 statesDropdown.addEventListener("change", () => { 
   fetch("./states.json") 
